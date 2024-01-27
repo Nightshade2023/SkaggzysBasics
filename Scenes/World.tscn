@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqbjsyv5p3f3o"]
+
+[ext_resource type="PackedScene" uid="uid://dr71lss0wqp0o" path="res://Scenes/Player.tscn" id="1_j11se"]
+[ext_resource type="PackedScene" uid="uid://dpfcjsvit3c85" path="res://Assets/StylooClassroomAssetPack GLTF & FBX/StylooClassroomAssetPack GLTF & FBX/catferia/GLTF/CAFETERIAcaketray.glb" id="2_xdlo5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ro3md"]
+size = Vector2(20, 20)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_65ivi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_j11se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.632824, 2.27607, 0.126814)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89612, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ro3md")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_65ivi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0172431, 0.999851, 0, -0.999851, -0.0172431, 0, 12.526, 0)
+
+[node name="CAFETERIAcaketray" parent="." instance=ExtResource("2_xdlo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25898, 0, 6.0303)
