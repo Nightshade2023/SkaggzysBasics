@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ou3kawihl3qk"]
 
-[ext_resource type="Texture2D" uid="uid://vdr2ct32fo6v" path="res://Assets/notebook.png" id="1_vmhse"]
+[ext_resource type="Texture2D" uid="uid://cb3k4uiokmuxa" path="res://Assets/SkaggzyNotebook.png" id="1_371y1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5vs7e"]
 
@@ -11,4 +11,4 @@ shape = SubResource("BoxShape3D_5vs7e")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.285317, 0.0927051, 0, -0.0927051, 0.285317, 0, 0, 0)
-texture = ExtResource("1_vmhse")
+texture = ExtResource("1_371y1")
