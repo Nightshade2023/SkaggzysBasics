@@ -20,6 +20,4 @@ mesh = SubResource("CapsuleMesh_xh4xi")
 
 [node name="Stamina Recharge" type="Timer" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-
 [connection signal="timeout" from="Stamina Recharge" to="." method="_on_stamina_recharge_timeout"]
