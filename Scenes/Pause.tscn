@@ -1,9 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsxr6kqh0ad1r"]
+[gd_scene load_steps=2 format=3 uid="uid://b4mn6fbv2oyoe"]
 
-[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_rajs4"]
+[ext_resource type="Script" path="res://Scripts/Pause.gd" id="1_0cx07"]
 
 [node name="Control" type="Control"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 13
 anchor_left = 0.5
@@ -11,7 +10,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rajs4")
+script = ExtResource("1_0cx07")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -41,6 +40,6 @@ layout_mode = 2
 text = "Quit
 "
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed" flags=18]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed" flags=18]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed" flags=18]

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var mouse_sensitivity := 0.001
+var mouse_sensitivity = Gameinfo.mouseSensativity
 var twist_input := 0.0
 var SPEED = 5
 var stamina = 100
@@ -15,6 +15,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	mouse_sensitivity = Gameinfo.mouseSensativity
 	var input := Vector3.ZERO
 	if isDistracted:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -39,6 +40,8 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$"../Control".visible = true
+		get_tree().paused = true
 		
 	move_and_slide()
 	$StaminaBar.value = stamina
@@ -58,3 +61,6 @@ func _on_stamina_recharge_timeout():
 func _on_stamina_discharge_timeout():
 	stamina -= 10
 	dstarted = false
+	
+func die():
+	get_tree().change_scene_to_file("res://Scenes/Main.tscn")

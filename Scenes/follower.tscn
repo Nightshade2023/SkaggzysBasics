@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0fpox1s2kprl"]
+[gd_scene load_steps=7 format=3 uid="uid://b0fpox1s2kprl"]
 
 [ext_resource type="Script" path="res://Scripts/Follower.gd" id="1_qhjbf"]
 [ext_resource type="Texture2D" uid="uid://b8ynrl18g8pox" path="res://Assets/floortile.jpg" id="2_bepkt"]
@@ -9,6 +9,8 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qta2b"]
 albedo_texture = ExtResource("2_bepkt")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6m5xv"]
 
 [node name="Follower" type="CharacterBody3D"]
 motion_mode = 1
@@ -22,3 +24,11 @@ mesh = SubResource("CapsuleMesh_7htpl")
 material = SubResource("StandardMaterial3D_qta2b")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.18813, 0)
+shape = SubResource("BoxShape3D_6m5xv")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

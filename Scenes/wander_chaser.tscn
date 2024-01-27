@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7ki51ed68gl1"]
 
-[ext_resource type="Script" path="res://WanderChaser.gd" id="1_7ke1i"]
+[ext_resource type="Script" path="res://Scripts/WanderChaser.gd" id="1_f3mc7"]
 [ext_resource type="Texture2D" uid="uid://bu3vtcswmypil" path="res://Assets/Mendris.png" id="2_500r2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
@@ -11,7 +11,7 @@
 
 [node name="WanderChaser" type="CharacterBody3D"]
 motion_mode = 1
-script = ExtResource("1_7ke1i")
+script = ExtResource("1_f3mc7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_8yuu6")
@@ -34,3 +34,4 @@ billboard = 2
 texture = ExtResource("2_500r2")
 
 [connection signal="body_entered" from="plrDetector" to="." method="_on_plr_detector_body_entered"]
+[connection signal="body_exited" from="plrDetector" to="." method="_on_plr_detector_body_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dejjo457477px"]
+[gd_scene load_steps=7 format=3 uid="uid://dejjo457477px"]
 
-[ext_resource type="Script" path="res://Wanderer.gd" id="1_788sg"]
+[ext_resource type="Script" path="res://Scripts/Wanderer.gd" id="1_w2u2n"]
 [ext_resource type="Texture2D" uid="uid://i32xyk2b68k3" path="res://Assets/wall.jpg" id="2_58rha"]
+[ext_resource type="Texture2D" uid="uid://8tofajnghohs" path="res://Assets/Travis.png" id="3_56rfu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
 
@@ -12,13 +13,19 @@ albedo_texture = ExtResource("2_58rha")
 
 [node name="Wanderer" type="CharacterBody3D"]
 motion_mode = 1
-script = ExtResource("1_788sg")
+script = ExtResource("1_w2u2n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_8yuu6")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_7htpl")
 material = SubResource("StandardMaterial3D_w81ei")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.127722, 2.19267, 0)
+billboard = 2
+texture = ExtResource("3_56rfu")

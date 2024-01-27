@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-var speed = 2
-var accel = 10
+var speed = 4
+var accel = 20
 var whichTarget := false
 var Chasing = false
 
@@ -21,8 +21,8 @@ func _process(delta):
 	
 	if Chasing:
 		nav.target_position = $"../Player".global_position
-		speed = 4
-		accel = 20
+		speed = 8
+		accel = 40
 		
 	direction = (nav.get_next_path_position() - global_position + Vector3(randf_range(-1,1),0,randf_range(-1,1))).normalized()
 
@@ -34,3 +34,8 @@ func _process(delta):
 func _on_plr_detector_body_entered(body):
 	if body.is_in_group("player"):
 		Chasing = true
+
+
+func _on_plr_detector_body_exited(body):
+	if body.is_in_group("player"):
+		Chasing = false
