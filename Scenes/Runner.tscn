@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwvbbtejqme02"]
+
+[ext_resource type="Script" path="res://Scripts/Runner.gd" id="1_mf4vl"]
+[ext_resource type="Texture2D" uid="uid://vdr2ct32fo6v" path="res://Assets/notebook.png" id="2_djhd5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7htpl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_86cwt"]
+albedo_texture = ExtResource("2_djhd5")
+
+[node name="Follower" type="CharacterBody3D"]
+motion_mode = 1
+script = ExtResource("1_mf4vl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8yuu6")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("CapsuleMesh_7htpl")
+material = SubResource("StandardMaterial3D_86cwt")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

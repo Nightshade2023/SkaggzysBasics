@@ -5,6 +5,8 @@ var twist_input := 0.0
 var SPEED = 5
 var stamina = 100
 var started := false
+var dstarted := false
+var sprinting := false
 @export var isDistracted := false
 
 
@@ -20,16 +22,18 @@ func _process(delta: float) -> void:
 	if not isDistracted:
 		input.x = Input.get_axis("A", "D")
 		input.z = Input.get_axis("W", "S")
-	
+		sprinting = Input.is_action_pressed("SHIFT") && stamina > 0
 		velocity = (basis * input * SPEED)
-		if Input.is_action_pressed("SHIFT") && stamina > 0:
+		if sprinting:
+			stamina -= .1
+		if stamina < 100 && not Input.is_action_pressed("SHIFT"):
+			stamina += .3
+		
+		if sprinting:
 			SPEED = 10
-			stamina -= 1
 		else:
 			SPEED = 5
-		if not started && stamina < 100:
-			$"Stamina Recharge".start(0.1)
-			started = true
+		
 		rotate_y(twist_input)
 		twist_input = 0.0
 
@@ -37,6 +41,7 @@ func _process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	move_and_slide()
+	$StaminaBar.value = stamina
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -48,3 +53,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_stamina_recharge_timeout():
 	stamina += 10
 	started = false
+
+
+func _on_stamina_discharge_timeout():
+	stamina -= 10
+	dstarted = false

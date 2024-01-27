@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7ki51ed68gl1"]
+
+[ext_resource type="Script" path="res://WanderChaser.gd" id="1_7ke1i"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7htpl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6lx5"]
+
+[node name="WanderChaser" type="CharacterBody3D"]
+motion_mode = 1
+script = ExtResource("1_7ke1i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8yuu6")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("CapsuleMesh_7htpl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="plrDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plrDetector"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+shape = SubResource("BoxShape3D_m6lx5")
+
+[connection signal="body_entered" from="plrDetector" to="." method="_on_plr_detector_body_entered"]

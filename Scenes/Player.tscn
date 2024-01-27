@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xh4xi"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 axis_lock_angular_x = true
 script = ExtResource("1_3cnft")
 
@@ -20,4 +20,14 @@ mesh = SubResource("CapsuleMesh_xh4xi")
 
 [node name="Stamina Recharge" type="Timer" parent="."]
 
+[node name="SpotLight3D" type="SpotLight3D" parent="." groups=["player"]]
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+offset_right = 292.0
+offset_bottom = 27.0
+rounded = true
+
+[node name="Stamina Discharge" type="Timer" parent="."]
+
 [connection signal="timeout" from="Stamina Recharge" to="." method="_on_stamina_recharge_timeout"]
+[connection signal="timeout" from="Stamina Discharge" to="." method="_on_stamina_discharge_timeout"]
