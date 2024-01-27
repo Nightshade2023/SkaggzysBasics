@@ -1,17 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqbjsyv5p3f3o"]
+[gd_scene load_steps=4 format=3 uid="uid://bqbjsyv5p3f3o"]
 
 [ext_resource type="PackedScene" uid="uid://dr71lss0wqp0o" path="res://Scenes/Player.tscn" id="1_j11se"]
-[ext_resource type="PackedScene" uid="uid://dpfcjsvit3c85" path="res://Assets/StylooClassroomAssetPack GLTF & FBX/StylooClassroomAssetPack GLTF & FBX/catferia/GLTF/CAFETERIAcaketray.glb" id="2_xdlo5"]
+[ext_resource type="PackedScene" uid="uid://mlu3ejfj3p3l" path="res://Scenes/WallEmpty.tscn" id="2_vi58w"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ro3md"]
-size = Vector2(20, 20)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_65ivi"]
+size = Vector2(200, 200)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_j11se")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.632824, 2.27607, 0.126814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.3218, 2.63793, 4.09484)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89612, 0)
@@ -19,13 +17,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89612, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_ro3md")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_65ivi")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0)
+mesh = SubResource("PlaneMesh_ro3md")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0172431, 0.999851, 0, -0.999851, -0.0172431, 0, 12.526, 0)
 
-[node name="CAFETERIAcaketray" parent="." instance=ExtResource("2_xdlo5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25898, 0, 6.0303)
+[node name="StaticBody3D" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 2.5, 8)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 2.5, 2)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 80.4074, 2.52453, 17.5865)
+
+[node name="StaticBody3D5" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 72.544, 2.52453, 17.5933)
+
+[node name="StaticBody3D7" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 53.4313, 2.52453, -1.76731)
+
+[node name="StaticBody3D8" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.8918, 2.52453, -7.45116)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.2887, 2.5311, 2.03864)
+
+[node name="StaticBody3D6" parent="." instance=ExtResource("2_vi58w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0906, 2.53111, 7.79075)
