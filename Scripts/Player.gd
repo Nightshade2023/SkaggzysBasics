@@ -23,6 +23,8 @@ func _process(delta: float) -> void:
 	var input := Vector3.ZERO
 	if isDistracted:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		velocity = Vector3(0,0,0)
+		
 		
 	if not isDistracted:
 		input.x = Input.get_axis("A", "D")
