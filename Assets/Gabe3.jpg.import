@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpuno4hnoatoy"
-path.s3tc="res://.godot/imported/2.jpg-46899b60430f2cfc22b0b92d08dca68b.s3tc.ctex"
+uid="uid://blo3q3mdikukh"
+path.s3tc="res://.godot/imported/Gabe3.jpg-2179228fb74bcee7976b6b0b870f8d65.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/2.jpg"
-dest_files=["res://.godot/imported/2.jpg-46899b60430f2cfc22b0b92d08dca68b.s3tc.ctex"]
+source_file="res://Assets/Gabe3.jpg"
+dest_files=["res://.godot/imported/Gabe3.jpg-2179228fb74bcee7976b6b0b870f8d65.s3tc.ctex"]
 
 [params]
 

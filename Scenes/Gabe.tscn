@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7250otg407hv"]
+
+[ext_resource type="Script" path="res://Scenes/Gabe.gd" id="1_52ayn"]
+[ext_resource type="Texture2D" uid="uid://bf4paw2mjhccl" path="res://Assets/Gabe1.png" id="1_tca05"]
+[ext_resource type="Texture2D" uid="uid://b0ndaby21olbo" path="res://Assets/Gabe2.png" id="2_k0pih"]
+[ext_resource type="Texture2D" uid="uid://bnadhrgcoan0x" path="res://Assets/Gabe3.png" id="3_3xnrh"]
+[ext_resource type="AudioStream" uid="uid://c1igcxufvgmkv" path="res://Assets/voicelines/GABE_BLOCK.mp3" id="5_vppwm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85dt3"]
+size = Vector3(20, 20, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1t7ky"]
+size = Vector3(10, 10, 10)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_52ayn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.08613, 0)
+shape = SubResource("BoxShape3D_85dt3")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.13692, 0)
+visible = false
+texture = ExtResource("1_tca05")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.87665, 0)
+visible = false
+texture = ExtResource("2_k0pih")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.79784, 0)
+visible = false
+texture = ExtResource("3_3xnrh")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_1t7ky")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_vppwm")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
