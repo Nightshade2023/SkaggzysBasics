@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ou3kawihl3qk"]
+[gd_scene load_steps=4 format=3 uid="uid://ou3kawihl3qk"]
 
 [ext_resource type="Texture2D" uid="uid://cb3k4uiokmuxa" path="res://Assets/SkaggzyNotebook.png" id="1_371y1"]
+[ext_resource type="Script" path="res://Scenes/Notebook.gd" id="1_mo0ap"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5vs7e"]
+size = Vector3(1.34024, 1.61835, 0.669036)
 
-[node name="Area3D" type="Area3D"]
+[node name="notebook_area" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 8.73804e-05, 0.00363355)
+script = ExtResource("1_mo0ap")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="notebook_collider" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_5vs7e")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.285317, 0.0927051, 0, -0.0927051, 0.285317, 0, 0, 0)
+[node name="notebook_sprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.291804, 0.0696466, 0, -0.0696466, 0.291804, 0, 0, 0)
 texture = ExtResource("1_371y1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
