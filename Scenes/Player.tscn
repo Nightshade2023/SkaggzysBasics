@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr71lss0wqp0o"]
+[gd_scene load_steps=6 format=3 uid="uid://dr71lss0wqp0o"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_3cnft"]
 [ext_resource type="PackedScene" uid="uid://bxt41k05ap887" path="res://Scenes/TravisMenu.tscn" id="2_fuotl"]
+[ext_resource type="PackedScene" uid="uid://de5p1jqdnr2et" path="res://Scenes/ui.tscn" id="3_ttx56"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mle6"]
 
@@ -33,6 +34,8 @@ rounded = true
 
 [node name="TravisMenu" parent="." instance=ExtResource("2_fuotl")]
 visible = false
+
+[node name="ui_notebook_control" parent="." instance=ExtResource("3_ttx56")]
 
 [connection signal="timeout" from="Stamina Recharge" to="." method="_on_stamina_recharge_timeout"]
 [connection signal="timeout" from="Stamina Discharge" to="." method="_on_stamina_discharge_timeout"]

@@ -73,6 +73,7 @@ func _on_notebook_option_pressed():
 	visible = false
 	player.isDistracted = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player.inNotebook = false
 
 
 func _on_notebook_option_2_pressed():
@@ -81,6 +82,7 @@ func _on_notebook_option_2_pressed():
 	visible = false
 	player.isDistracted = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player.inNotebook = false
 
 func _on_notebook_option_3_pressed():
 	if questionDictionary[question_ID]["correctAnswerID"] != 3:
@@ -88,3 +90,4 @@ func _on_notebook_option_3_pressed():
 	visible = false
 	player.isDistracted = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player.inNotebook = false

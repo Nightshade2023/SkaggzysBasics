@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ou3kawihl3qk"]
+[gd_scene load_steps=4 format=3 uid="uid://ou3kawihl3qk"]
 
 [ext_resource type="Texture2D" uid="uid://cb3k4uiokmuxa" path="res://Assets/SkaggzyNotebook.png" id="1_371y1"]
 [ext_resource type="Script" path="res://Scenes/Notebook.gd" id="1_mo0ap"]
-[ext_resource type="PackedScene" uid="uid://de5p1jqdnr2et" path="res://Scenes/ui.tscn" id="3_8so80"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5vs7e"]
 size = Vector3(1.34024, 1.61835, 0.669036)
 
 [node name="notebook_area" type="Area3D"]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 8.73804e-05, 0.00363355)
 script = ExtResource("1_mo0ap")
 
@@ -17,8 +17,5 @@ shape = SubResource("BoxShape3D_5vs7e")
 [node name="notebook_sprite" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.291804, 0.0696466, 0, -0.0696466, 0.291804, 0, 0, 0)
 texture = ExtResource("1_371y1")
-
-[node name="ui_notebook_control" parent="." instance=ExtResource("3_8so80")]
-visible = false
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

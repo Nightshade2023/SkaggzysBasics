@@ -11,6 +11,7 @@ var notebook_collected = 0
 @export var isDistracted := false
 @export var TMenu = false
 @export var notebooks_collected = 0
+@export var inNotebook := false
 
 
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$ui_notebook_control.visible = inNotebook
 	$TravisMenu.visible = TMenu
 	mouse_sensitivity = Gameinfo.mouseSensativity
 	var input := Vector3.ZERO
