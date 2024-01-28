@@ -9,14 +9,20 @@ extends Control
 # Add questions
 var questionDictionary = {
 	1: {
+		"question": "Determine whether the following statement is TRUE or FALSE.
+
+Let P represent the set of prime numbers.
+
+4 element of left curly bracket x element of real numbers invisible times vertical line text   end text 13 invisible times minus text   end text 2 x element of left curly bracket y invisible times vertical line y invisible times element of P right curly bracket right curly bracket blank",
 		"answers": {
-			1: "TRUE",
-			2: "FALSE",
-			3: "NOT ENOUGH INFO"
+			1: "Answer 1 text here.",
+			2: "Answer 2 text here.",
+			3: "Answer 3 text here."
 		},
 	"correctAnswerID": 2  # Set the correct answer ID here
 	},
 	2:  {
+		"question": "Your question text here.",
 		"answers": {
 			1: "Answer 1 text here.",
 			2: "Answer 2 text here.",
@@ -25,22 +31,25 @@ var questionDictionary = {
 	"correctAnswerID": 2  # Set the correct answer ID here
 	},
 	3:  {
+		"question": "Your question text here.",
 		"answers": {
-			1: "A",
-			2: "A",
-			3: "A"
+			1: "Answer 1 text here.",
+			2: "Answer 2 text here.",
+			3: "Answer 3 text here."
 		},
 	"correctAnswerID": 2  # Set the correct answer ID here
 	},
 	4:  {
+		"question": "Your question text here.",
 		"answers": {
-			1: "VALID",
-			2: "NON-VALID",
-			3: "NOT ENOUGH INFO"
+			1: "Answer 1 text here.",
+			2: "Answer 2 text here.",
+			3: "Answer 3 text here."
 		},
 	"correctAnswerID": 2  # Set the correct answer ID here
 	},
 	5:  {
+		"question": "Your question text here.",
 		"answers": {
 			1: "Answer 1 text here.",
 			2: "Answer 2 text here.",
@@ -51,18 +60,7 @@ var questionDictionary = {
 }
 
 func _ready():
-
-	if question_ID == 1:
-		$question_texture.visible = true 
-	elif question_ID == 2:
-		$question_texture2.visible = true 
-	elif question_ID == 3:
-		$question_texture3.visible = true 
-	elif question_ID == 4:
-		$question_texture4.visible = true 
-	elif question_ID == 5:
-		$question_texture5.visible = true 
-		
+	$notebook_question.text = questionDictionary[question_ID]["question"]
 	$notebook_option.text = questionDictionary[question_ID]["answers"][1]
 	$notebook_option2.text = questionDictionary[question_ID]["answers"][2]
 	$notebook_option3.text = questionDictionary[question_ID]["answers"][3]

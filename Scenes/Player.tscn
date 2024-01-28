@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr71lss0wqp0o"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_3cnft"]
-[ext_resource type="PackedScene" path="res://Scenes/TravisMenu.tscn" id="2_fuotl"]
+[ext_resource type="PackedScene" uid="uid://bxt41k05ap887" path="res://Scenes/TravisMenu.tscn" id="2_fuotl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mle6"]
 
@@ -13,7 +13,6 @@ axis_lock_angular_x = true
 script = ExtResource("1_3cnft")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-current = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3mle6")

@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://de5p1jqdnr2et"]
+[gd_scene load_steps=3 format=3 uid="uid://de5p1jqdnr2et"]
 
 [ext_resource type="Script" path="res://Scenes/ui_notebook.gd" id="1_25moq"]
-[ext_resource type="Texture2D" uid="uid://flgxvrmh42ir" path="res://Assets/questions/question1.png" id="2_oao5o"]
-[ext_resource type="Texture2D" uid="uid://buyvnxrykgdvu" path="res://Assets/questions/question2.png" id="3_w4p2i"]
-[ext_resource type="Texture2D" uid="uid://17l2h4ffk8lr" path="res://Assets/questions/question3.png" id="4_dgl87"]
-[ext_resource type="Texture2D" uid="uid://c8x4vt17tqao0" path="res://Assets/questions/question4.png" id="5_fj7j3"]
-[ext_resource type="Texture2D" uid="uid://dc4og3fhhc8fc" path="res://Assets/questions/question5.png" id="6_yv5v6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ol8ej"]
+font_size = 12
 
 [node name="ui_notebook_control" type="Control"]
 layout_mode = 3
@@ -16,73 +14,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25moq")
 
+[node name="notebook_question" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = 65.0
+offset_right = -243.0
+offset_bottom = -466.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Question GO here
+"
+label_settings = SubResource("LabelSettings_ol8ej")
+horizontal_alignment = 1
+
 [node name="notebook_option" type="Button" parent="."]
 layout_mode = 0
-offset_left = 154.0
-offset_top = 414.0
-offset_right = 353.0
-offset_bottom = 476.0
+offset_left = 461.0
+offset_top = 192.0
+offset_right = 660.0
+offset_bottom = 254.0
 text = "Option Answer"
 icon_alignment = 1
 
 [node name="notebook_option2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 467.0
-offset_top = 411.0
-offset_right = 666.0
-offset_bottom = 473.0
+offset_left = 461.0
+offset_top = 264.0
+offset_right = 660.0
+offset_bottom = 326.0
 text = "Option Answer"
 icon_alignment = 1
 
 [node name="notebook_option3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 764.0
-offset_top = 410.0
-offset_right = 963.0
-offset_bottom = 472.0
+offset_left = 460.0
+offset_top = 335.0
+offset_right = 659.0
+offset_bottom = 397.0
 text = "Option Answer"
 icon_alignment = 1
-
-[node name="question_texture" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 327.0
-offset_top = 145.0
-offset_right = 818.0
-offset_bottom = 273.0
-texture = ExtResource("2_oao5o")
-
-[node name="question_texture2" type="TextureRect" parent="."]
-visible = false
-offset_left = 397.0
-offset_top = 52.0
-offset_right = 785.0
-offset_bottom = 325.0
-texture = ExtResource("3_w4p2i")
-
-[node name="question_texture3" type="TextureRect" parent="."]
-visible = false
-offset_left = 215.0
-offset_top = 105.0
-offset_right = 950.0
-offset_bottom = 299.0
-texture = ExtResource("4_dgl87")
-
-[node name="question_texture4" type="TextureRect" parent="."]
-visible = false
-offset_left = 214.0
-offset_top = 165.0
-offset_right = 956.0
-offset_bottom = 233.0
-texture = ExtResource("5_fj7j3")
-
-[node name="question_texture5" type="TextureRect" parent="."]
-visible = false
-offset_left = 222.0
-offset_top = 123.0
-offset_right = 900.0
-offset_bottom = 282.0
-texture = ExtResource("6_yv5v6")
 
 [connection signal="pressed" from="notebook_option" to="." method="_on_notebook_option_pressed"]
 [connection signal="pressed" from="notebook_option2" to="." method="_on_notebook_option_2_pressed"]
