@@ -29,4 +29,5 @@ func _process(delta):
 	
 	move_and_slide()
 
-
+	global_position.y = 1
+	$RigidBody3D.global_position.y = 1

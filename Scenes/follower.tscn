@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0fpox1s2kprl"]
+[gd_scene load_steps=8 format=3 uid="uid://b0fpox1s2kprl"]
 
 [ext_resource type="Script" path="res://Scripts/Follower.gd" id="1_qhjbf"]
 [ext_resource type="Texture2D" uid="uid://b8ynrl18g8pox" path="res://Assets/floortile.jpg" id="2_bepkt"]
+[ext_resource type="Texture2D" uid="uid://d1p5cemomnxyj" path="res://Assets/Skaggzy.png" id="3_1an6p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
 
@@ -21,6 +22,7 @@ script = ExtResource("1_qhjbf")
 shape = SubResource("CapsuleShape3D_8yuu6")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_7htpl")
 material = SubResource("StandardMaterial3D_qta2b")
 
@@ -31,5 +33,10 @@ material = SubResource("StandardMaterial3D_qta2b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.18813, 0)
 shape = SubResource("BoxShape3D_6m5xv")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.05569, 0)
+billboard = 2
+texture = ExtResource("3_1an6p")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
