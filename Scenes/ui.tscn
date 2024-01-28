@@ -1,9 +1,77 @@
-[gd_scene format=3 uid="uid://de5p1jqdnr2et"]
+[gd_scene load_steps=7 format=3 uid="uid://de5p1jqdnr2et"]
 
-[node name="ui_control" type="Control"]
+[ext_resource type="Script" path="res://Scenes/ui_notebook.gd" id="1_25moq"]
+[ext_resource type="Texture2D" uid="uid://c38u7qemr1mys" path="res://Assets/questions/question1.png" id="2_oao5o"]
+[ext_resource type="Texture2D" uid="uid://deln6jy40k7wm" path="res://Assets/questions/question2.png" id="3_w4p2i"]
+[ext_resource type="Texture2D" uid="uid://egcp7i86fp37" path="res://Assets/questions/question3.png" id="4_dgl87"]
+[ext_resource type="Texture2D" uid="uid://dc5jalf562nf5" path="res://Assets/questions/question4.png" id="5_fj7j3"]
+[ext_resource type="Texture2D" uid="uid://cg8aa0nuh4vm6" path="res://Assets/questions/question5.png" id="6_yv5v6"]
+
+[node name="ui_notebook_control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_25moq")
+
+[node name="notebook_option" type="Button" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 385.0
+offset_right = 311.0
+offset_bottom = 455.0
+
+[node name="notebook_option2" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 385.0
+offset_right = 665.0
+offset_bottom = 455.0
+
+[node name="notebook_option3" type="Button" parent="."]
+offset_left = 804.0
+offset_top = 385.0
+offset_right = 1001.0
+offset_bottom = 455.0
+
+[node name="question_texture" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 345.0
+offset_top = 131.0
+offset_right = 836.0
+offset_bottom = 259.0
+texture = ExtResource("2_oao5o")
+
+[node name="question_texture2" type="TextureRect" parent="."]
+visible = false
+offset_left = 398.0
+offset_top = 62.0
+offset_right = 786.0
+offset_bottom = 335.0
+texture = ExtResource("3_w4p2i")
+
+[node name="question_texture3" type="TextureRect" parent="."]
+visible = false
+offset_left = 223.0
+offset_top = 94.0
+offset_right = 958.0
+offset_bottom = 288.0
+texture = ExtResource("4_dgl87")
+
+[node name="question_texture4" type="TextureRect" parent="."]
+visible = false
+offset_left = 222.0
+offset_top = 164.0
+offset_right = 964.0
+offset_bottom = 232.0
+texture = ExtResource("5_fj7j3")
+
+[node name="question_texture5" type="TextureRect" parent="."]
+visible = false
+offset_left = 234.0
+offset_top = 131.0
+offset_right = 912.0
+offset_bottom = 258.0
+texture = ExtResource("6_yv5v6")

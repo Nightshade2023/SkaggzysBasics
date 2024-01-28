@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Gameinfo="*res://Scripts/GAMEINFO.gd"
-GlobalData="*res://Scripts/global_data.gd"
 
 [display]
 
