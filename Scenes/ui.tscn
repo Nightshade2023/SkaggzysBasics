@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://buyvnxrykgdvu" path="res://Assets/questions/question2.png" id="3_w4p2i"]
 [ext_resource type="Texture2D" uid="uid://17l2h4ffk8lr" path="res://Assets/questions/question3.png" id="4_dgl87"]
 [ext_resource type="Texture2D" uid="uid://c8x4vt17tqao0" path="res://Assets/questions/question4.png" id="5_fj7j3"]
-[ext_resource type="Texture2D" uid="uid://dc4og3fhhc8fc" path="res://Assets/questions/question5.png" id="6_yv5v6"]
+[ext_resource type="Texture2D" uid="uid://day35nlvdaow4" path="res://Assets/questions/question5.png" id="6_yv5v6"]
 
 [node name="ui_notebook_control" type="Control"]
 layout_mode = 3
@@ -54,6 +54,7 @@ texture = ExtResource("2_oao5o")
 
 [node name="question_texture2" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 397.0
 offset_top = 52.0
 offset_right = 785.0
@@ -62,6 +63,7 @@ texture = ExtResource("3_w4p2i")
 
 [node name="question_texture3" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 215.0
 offset_top = 105.0
 offset_right = 950.0
@@ -70,6 +72,7 @@ texture = ExtResource("4_dgl87")
 
 [node name="question_texture4" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 214.0
 offset_top = 165.0
 offset_right = 956.0
@@ -78,6 +81,7 @@ texture = ExtResource("5_fj7j3")
 
 [node name="question_texture5" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 222.0
 offset_top = 123.0
 offset_right = 900.0
