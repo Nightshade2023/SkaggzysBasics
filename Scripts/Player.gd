@@ -22,6 +22,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if notebooks_collected == 5:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://Scenes/Win.tscn")
 	$"../Follower".speed = aggress
 	$ui_notebook_control.question_ID = QuestionID

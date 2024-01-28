@@ -83,12 +83,28 @@ func _on_visibility_changed():
 		$question_texture.visible = true 
 	elif question_ID == 2:
 		$question_texture2.visible = true 
+		$question_texture.visible = false 
+		$question_texture4.visible = false 
+		$question_texture3.visible = false 
+		$question_texture5.visible = false 
 	elif question_ID == 3:
-		$question_texture3.visible = true 
+		$question_texture3.visible = true
+		$question_texture.visible = false 
+		$question_texture4.visible = false 
+		$question_texture2.visible = false 
+		$question_texture5.visible = false  
 	elif question_ID == 4:
-		$question_texture4.visible = true 
+		$question_texture4.visible = true
+		$question_texture.visible = false 
+		$question_texture2.visible = false 
+		$question_texture3.visible = false 
+		$question_texture5.visible = false  
 	elif question_ID == 5:
-		$question_texture5.visible = true 
+		$question_texture5.visible = true
+		$question_texture.visible = false 
+		$question_texture4.visible = false 
+		$question_texture3.visible = false 
+		$question_texture2.visible = false  
 		
 	$notebook_option.text = questionDictionary[question_ID]["answers"][1]
 	$notebook_option2.text = questionDictionary[question_ID]["answers"][2]
