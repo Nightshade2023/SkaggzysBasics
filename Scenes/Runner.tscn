@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwvbbtejqme02"]
+[gd_scene load_steps=7 format=3 uid="uid://dwvbbtejqme02"]
 
 [ext_resource type="Script" path="res://Scripts/Runner.gd" id="1_mf4vl"]
 [ext_resource type="Texture2D" uid="uid://vdr2ct32fo6v" path="res://Assets/notebook.png" id="2_djhd5"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_86cwt"]
 albedo_texture = ExtResource("2_djhd5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qa4i8"]
+size = Vector3(10, 5, 1)
 
 [node name="Follower" type="CharacterBody3D"]
 motion_mode = 1
@@ -22,3 +25,15 @@ mesh = SubResource("CapsuleMesh_7htpl")
 material = SubResource("StandardMaterial3D_86cwt")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41901, 0)
+shape = SubResource("BoxShape3D_qa4i8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.41901, 0)
+shape = SubResource("BoxShape3D_qa4i8")

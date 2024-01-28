@@ -10,6 +10,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6lx5"]
 
 [node name="WanderChaser" type="CharacterBody3D"]
+collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_f3mc7")
 

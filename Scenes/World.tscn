@@ -246,22 +246,13 @@ transform = Transform3D(0.142629, 0, 0.989776, 0, 1, 0, -0.989776, 0, 0.142629, 
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0)
 mesh = SubResource("PlaneMesh_ro3md")
 
-[node name="Follower" parent="." instance=ExtResource("6_dglc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2611, 2.71927, -3.22006)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_le1k4")
 autoplay = true
 bus = &"Music"
 
 [node name="Runner" parent="." instance=ExtResource("8_qxunw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5872, 1.6415, -4.11282)
-
-[node name="Wanderer" parent="." instance=ExtResource("9_dg8fi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.2505, 0, -48.7372)
-
-[node name="WanderChaser" parent="." instance=ExtResource("10_1ym2o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.8503, 2.13551, -10.1525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712555, 0.859354, -37.656)
 
 [node name="Control" parent="." instance=ExtResource("11_eeplo")]
 process_mode = 3
@@ -270,3 +261,12 @@ visible = false
 [node name="Control2" parent="." instance=ExtResource("12_qadnj")]
 process_mode = 3
 visible = false
+
+[node name="WanderChaser" parent="." instance=ExtResource("10_1ym2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3863, -1.90735e-06, -36.5759)
+
+[node name="Wanderer" parent="." instance=ExtResource("9_dg8fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0263, 0, -37.0451)
+
+[node name="Follower" parent="." instance=ExtResource("6_dglc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1175, 0, -38.144)

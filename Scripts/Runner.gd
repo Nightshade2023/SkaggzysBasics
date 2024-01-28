@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-var speed = 10
-var accel = 50
+var speed = 30
+var accel = 25
 var whichTarget := false
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
@@ -28,3 +28,5 @@ func _process(delta):
 	velocity = velocity.lerp(direction * speed, accel * delta)
 	
 	move_and_slide()
+
+
