@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwvbbtejqme02"]
+[gd_scene load_steps=13 format=3 uid="uid://dwvbbtejqme02"]
 
 [ext_resource type="Script" path="res://Scripts/Runner.gd" id="1_mf4vl"]
 [ext_resource type="Texture2D" uid="uid://vdr2ct32fo6v" path="res://Assets/notebook.png" id="2_djhd5"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bui8jxs7ttrsm" path="res://Assets/voicelines/HELLO_THERE.mp3" id="4_4gkpf"]
 [ext_resource type="AudioStream" uid="uid://tdjvi73ms5v8" path="res://Assets/voicelines/HEY.mp3" id="5_6nbl1"]
 [ext_resource type="AudioStream" uid="uid://bbrl6aan4apqm" path="res://Assets/voicelines/LATE_FOR_CLASS.mp3" id="6_5hdqu"]
+[ext_resource type="Texture2D" uid="uid://dh4yrh7ov3it0" path="res://Assets/Anthony.PNG" id="7_qx623"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
 
@@ -27,6 +28,7 @@ script = ExtResource("1_mf4vl")
 shape = SubResource("CapsuleShape3D_8yuu6")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_7htpl")
 material = SubResource("StandardMaterial3D_86cwt")
 
@@ -66,5 +68,10 @@ bus = &"Voices"
 [node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_5hdqu")
 bus = &"Voices"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00103593, 1.42688, 0)
+billboard = 2
+texture = ExtResource("7_qx623")
 
 [connection signal="body_entered" from="VoiceDetector" to="." method="_on_voice_detector_body_entered"]
