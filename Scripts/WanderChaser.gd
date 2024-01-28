@@ -4,6 +4,7 @@ var speed = 4
 var accel = 20
 var whichTarget := false
 var Chasing = false
+var mathCenter := Vector3(38,.5,2)
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 
@@ -34,8 +35,19 @@ func _process(delta):
 func _on_plr_detector_body_entered(body):
 	if body.is_in_group("player"):
 		Chasing = true
-
+		$AudioStreamPlayer3D.play()
+	
 
 func _on_plr_detector_body_exited(body):
 	if body.is_in_group("player"):
 		Chasing = false
+
+
+func _on_grab_detector_body_entered(body):
+	if body.is_in_group("player"):
+		global_position = mathCenter
+		body.global_position = mathCenter
+		$AudioStreamPlayer3D2.play()
+		$AudioStreamPlayer3D.stop()
+		Chasing = false
+	

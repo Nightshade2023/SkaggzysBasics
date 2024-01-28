@@ -31,3 +31,18 @@ func _process(delta):
 
 	global_position.y = 1
 	$RigidBody3D.global_position.y = 1
+
+
+func _on_voice_detector_body_entered(body):
+	if body.is_in_group("player"):
+		var select = randi_range(0,3)
+		print(select)
+		if select == 0:
+			$AudioStreamPlayer3D.play()
+		elif select == 1:
+			$AudioStreamPlayer3D2.play()
+		elif select == 2:
+			$AudioStreamPlayer3D3.play()
+		elif select == 3:
+			$AudioStreamPlayer3D4.play()
+		

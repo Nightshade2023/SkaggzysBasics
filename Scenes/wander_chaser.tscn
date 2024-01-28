@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7ki51ed68gl1"]
+[gd_scene load_steps=9 format=3 uid="uid://c7ki51ed68gl1"]
 
 [ext_resource type="Script" path="res://Scripts/WanderChaser.gd" id="1_f3mc7"]
 [ext_resource type="Texture2D" uid="uid://bu3vtcswmypil" path="res://Assets/Mendris.png" id="2_500r2"]
+[ext_resource type="AudioStream" uid="uid://ciab2iri8vt5j" path="res://Assets/voicelines/CONDITIONS.mp3" id="3_bevdw"]
+[ext_resource type="AudioStream" uid="uid://d0gsssx35bf83" path="res://Assets/voicelines/LYFF.mp3" id="4_l8ar1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7htpl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6lx5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t8h4g"]
 
 [node name="WanderChaser" type="CharacterBody3D"]
 collision_mask = 9
@@ -29,10 +33,25 @@ mesh = SubResource("CapsuleMesh_7htpl")
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 shape = SubResource("BoxShape3D_m6lx5")
 
+[node name="GrabDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabDetector"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2.12217, 0)
+shape = SubResource("CapsuleShape3D_t8h4g")
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.30486, 0)
 billboard = 2
 texture = ExtResource("2_500r2")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_bevdw")
+bus = &"Voices"
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_l8ar1")
+bus = &"Voices"
+
 [connection signal="body_entered" from="plrDetector" to="." method="_on_plr_detector_body_entered"]
 [connection signal="body_exited" from="plrDetector" to="." method="_on_plr_detector_body_exited"]
+[connection signal="body_entered" from="GrabDetector" to="." method="_on_grab_detector_body_entered"]

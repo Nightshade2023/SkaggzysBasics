@@ -253,6 +253,7 @@ bus = &"Music"
 
 [node name="Runner" parent="." instance=ExtResource("8_qxunw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712555, 0.859354, -37.656)
+axis_lock_linear_y = true
 
 [node name="Control" parent="." instance=ExtResource("11_eeplo")]
 process_mode = 3

@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwvbbtejqme02"]
+[gd_scene load_steps=12 format=3 uid="uid://dwvbbtejqme02"]
 
 [ext_resource type="Script" path="res://Scripts/Runner.gd" id="1_mf4vl"]
 [ext_resource type="Texture2D" uid="uid://vdr2ct32fo6v" path="res://Assets/notebook.png" id="2_djhd5"]
+[ext_resource type="AudioStream" uid="uid://covu0ufwcihpm" path="res://Assets/voicelines/GOTTA_JET.mp3" id="3_5x47s"]
+[ext_resource type="AudioStream" uid="uid://bui8jxs7ttrsm" path="res://Assets/voicelines/HELLO_THERE.mp3" id="4_4gkpf"]
+[ext_resource type="AudioStream" uid="uid://tdjvi73ms5v8" path="res://Assets/voicelines/HEY.mp3" id="5_6nbl1"]
+[ext_resource type="AudioStream" uid="uid://bbrl6aan4apqm" path="res://Assets/voicelines/LATE_FOR_CLASS.mp3" id="6_5hdqu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yuu6"]
 
@@ -12,6 +16,8 @@ albedo_texture = ExtResource("2_djhd5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qa4i8"]
 size = Vector3(10, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hyn3o"]
 
 [node name="Follower" type="CharacterBody3D"]
 motion_mode = 1
@@ -29,6 +35,7 @@ material = SubResource("StandardMaterial3D_86cwt")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 8
 collision_mask = 0
+mass = 10.0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41901, 0)
@@ -37,3 +44,27 @@ shape = SubResource("BoxShape3D_qa4i8")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.41901, 0)
 shape = SubResource("BoxShape3D_qa4i8")
+
+[node name="VoiceDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VoiceDetector"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 1.6963, 0)
+shape = SubResource("BoxShape3D_hyn3o")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_5x47s")
+bus = &"Voices"
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_4gkpf")
+bus = &"Voices"
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_6nbl1")
+bus = &"Voices"
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_5hdqu")
+bus = &"Voices"
+
+[connection signal="body_entered" from="VoiceDetector" to="." method="_on_voice_detector_body_entered"]
