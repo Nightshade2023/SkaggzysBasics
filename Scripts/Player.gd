@@ -9,6 +9,7 @@ var dstarted := false
 var sprinting := false
 var notebook_collected = 0
 @export var isDistracted := false
+@export var TMenu = false
 @export var notebooks_collected = 0
 
 
@@ -17,6 +18,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$TravisMenu.visible = TMenu
 	mouse_sensitivity = Gameinfo.mouseSensativity
 	var input := Vector3.ZERO
 	if isDistracted:

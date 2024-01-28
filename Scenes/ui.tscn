@@ -1,60 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://de5p1jqdnr2et"]
+[gd_scene format=3 uid="uid://de5p1jqdnr2et"]
 
-[ext_resource type="Script" path="res://Scenes/ui_notebook.gd" id="1_25moq"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ol8ej"]
-font_size = 12
-
-[node name="ui_notebook_control" type="Control"]
+[node name="ui_control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_25moq")
-
-[node name="notebook_question" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 196.0
-offset_top = 65.0
-offset_right = -243.0
-offset_bottom = -466.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Question GO here
-"
-label_settings = SubResource("LabelSettings_ol8ej")
-horizontal_alignment = 1
-
-[node name="notebook_option" type="Button" parent="."]
-layout_mode = 0
-offset_left = 461.0
-offset_top = 192.0
-offset_right = 660.0
-offset_bottom = 254.0
-text = "Option Answer"
-icon_alignment = 1
-
-[node name="notebook_option2" type="Button" parent="."]
-offset_left = 461.0
-offset_top = 264.0
-offset_right = 660.0
-offset_bottom = 326.0
-text = "Option Answer"
-icon_alignment = 1
-
-[node name="notebook_option3" type="Button" parent="."]
-offset_left = 460.0
-offset_top = 335.0
-offset_right = 659.0
-offset_bottom = 397.0
-text = "Option Answer"
-icon_alignment = 1
-
-[connection signal="pressed" from="notebook_option" to="." method="_on_notebook_option_pressed"]
-[connection signal="pressed" from="notebook_option2" to="." method="_on_notebook_option_2_pressed"]
-[connection signal="pressed" from="notebook_option3" to="." method="_on_notebook_option_3_pressed"]
