@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bqbjsyv5p3f3o"]
+[gd_scene load_steps=19 format=3 uid="uid://yu7mahd1n5w1"]
 
 [ext_resource type="PackedScene" uid="uid://dr71lss0wqp0o" path="res://Scenes/Player.tscn" id="1_j11se"]
 [ext_resource type="Texture2D" uid="uid://b8ynrl18g8pox" path="res://Assets/floortile.jpg" id="2_kagl7"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b4mn6fbv2oyoe" path="res://Scenes/Pause.tscn" id="11_eeplo"]
 [ext_resource type="PackedScene" uid="uid://1xxfloji2nfl" path="res://Scenes/Pausecontrol.tscn" id="12_qadnj"]
 [ext_resource type="Script" path="res://Scenes/GabeHandler.gd" id="13_ftdgr"]
-[ext_resource type="PackedScene" uid="uid://b7250otg407hv" path="res://Scenes/Gabe.tscn" id="13_uvg7l"]
+[ext_resource type="PackedScene" path="res://Scenes/Gabe.tscn" id="13_uvg7l"]
 [ext_resource type="Texture2D" uid="uid://c4doe2p7ki73l" path="res://Assets/math center.jpg" id="15_q2h5b"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_u4jbt"]
