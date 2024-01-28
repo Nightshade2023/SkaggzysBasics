@@ -1,7 +1,7 @@
 extends Area3D
 
 @onready var player = $"../Player"
-
+@export var QuestionID = 1
 
 
 func _ready():
@@ -14,7 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		player.notebooks_collected += 1
 		player.inNotebook = true
+		player.QuestionID = QuestionID
 		player.isDistracted = true
 		queue_free()

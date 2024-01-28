@@ -12,6 +12,8 @@ var notebook_collected = 0
 @export var TMenu = false
 @export var notebooks_collected = 0
 @export var inNotebook := false
+@export var QuestionID = 1
+@export var aggress = 4
 
 
 func _ready() -> void:
@@ -19,6 +21,10 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if notebooks_collected == 5:
+		get_tree().change_scene_to_file("res://Scenes/Win.tscn")
+	$"../Follower".speed = aggress
+	$ui_notebook_control.question_ID = QuestionID
 	$ui_notebook_control.visible = inNotebook
 	$TravisMenu.visible = TMenu
 	mouse_sensitivity = Gameinfo.mouseSensativity

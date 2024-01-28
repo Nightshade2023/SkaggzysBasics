@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://yu7mahd1n5w1"]
+[gd_scene load_steps=19 format=3 uid="uid://bqbjsyv5p3f3o"]
 
 [ext_resource type="PackedScene" uid="uid://dr71lss0wqp0o" path="res://Scenes/Player.tscn" id="1_j11se"]
 [ext_resource type="Texture2D" uid="uid://b8ynrl18g8pox" path="res://Assets/floortile.jpg" id="2_kagl7"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b4mn6fbv2oyoe" path="res://Scenes/Pause.tscn" id="11_eeplo"]
 [ext_resource type="PackedScene" uid="uid://1xxfloji2nfl" path="res://Scenes/Pausecontrol.tscn" id="12_qadnj"]
 [ext_resource type="Script" path="res://Scenes/GabeHandler.gd" id="13_ftdgr"]
-[ext_resource type="PackedScene" path="res://Scenes/Gabe.tscn" id="13_uvg7l"]
+[ext_resource type="PackedScene" uid="uid://b7250otg407hv" path="res://Scenes/Gabe.tscn" id="13_uvg7l"]
 [ext_resource type="Texture2D" uid="uid://c4doe2p7ki73l" path="res://Assets/math center.jpg" id="15_q2h5b"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_u4jbt"]
@@ -244,6 +244,22 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.635
 
 [node name="Notebook1" parent="." instance=ExtResource("4_2n0hc")]
 transform = Transform3D(0.142629, 0, 0.989776, 0, 1, 0, -0.989776, 0, 0.142629, 63.9893, 3.02709, 18.0008)
+
+[node name="Notebook2" parent="." instance=ExtResource("4_2n0hc")]
+transform = Transform3D(0.142629, 0, 0.989776, 0, 1, 0, -0.989776, 0, 0.142629, 21.6936, 3.02709, -37.8538)
+QuestionID = 2
+
+[node name="Notebook3" parent="." instance=ExtResource("4_2n0hc")]
+transform = Transform3D(0.142629, 0, 0.989776, 0, 1, 0, -0.989776, 0, 0.142629, 10.1122, 3.02709, -4.04463)
+QuestionID = 3
+
+[node name="Notebook4" parent="." instance=ExtResource("4_2n0hc")]
+transform = Transform3D(0.142629, 0, 0.989776, 0, 1, 0, -0.989776, 0, 0.142629, 63.9893, 3.02709, -37.6262)
+QuestionID = 4
+
+[node name="Notebook5" parent="." instance=ExtResource("4_2n0hc")]
+transform = Transform3D(0.142629, 0, 0.989776, 0, 1, 0, -0.989776, 0, 0.142629, 42.6369, 3.02709, -37.5161)
+QuestionID = 5
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, 0)

@@ -1,7 +1,7 @@
 extends Control
 
-@onready var skaggs = $"../Follower"
-@onready var player = $"../Player"
+
+@onready var player = $".."
 
 @export var question_ID = 1
 
@@ -18,19 +18,19 @@ var questionDictionary = {
 	},
 	2:  {
 		"answers": {
-			1: "Answer 1 text here.",
-			2: "Answer 2 text here.",
-			3: "Answer 3 text here."
+			1: "1",
+			2: "5",
+			3: "9"
 		},
-	"correctAnswerID": 2  # Set the correct answer ID here
+	"correctAnswerID": 1  # Set the correct answer ID here
 	},
 	3:  {
 		"answers": {
-			1: "A",
-			2: "A",
-			3: "A"
+			1: "Socko",
+			2: "Lefty",
+			3: "Muscles"
 		},
-	"correctAnswerID": 2  # Set the correct answer ID here
+	"correctAnswerID": 3  # Set the correct answer ID here
 	},
 	4:  {
 		"answers": {
@@ -42,16 +42,43 @@ var questionDictionary = {
 	},
 	5:  {
 		"answers": {
-			1: "Answer 1 text here.",
-			2: "Answer 2 text here.",
-			3: "Answer 3 text here."
+			1: "(P NAND Q) NAND (Q NAND P)",
+			2: "(P NAND Q) NAND Q",
+			3: "(P NAND P) NAND (Q NAND P)"
 		},
-	"correctAnswerID": 2  # Set the correct answer ID here
+	"correctAnswerID": 3  # Set the correct answer ID here
 	}
 }
 
-func _ready():
+func _on_notebook_option_pressed():
+	if questionDictionary[question_ID]["correctAnswerID"] != 1:
+		player.aggress += 2
+	player.inNotebook = false
+	player.isDistracted = false
+	player.notebooks_collected += 1
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	print("clicked")
+	
 
+
+func _on_notebook_option_2_pressed():
+	if questionDictionary[question_ID]["correctAnswerID"] != 2:
+		player.aggress += 2
+	player.inNotebook = false
+	player.isDistracted = false
+	player.notebooks_collected += 1
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _on_notebook_option_3_pressed():
+	if questionDictionary[question_ID]["correctAnswerID"] != 3:
+		player.aggress += 2
+	player.inNotebook = false
+	player.isDistracted = false
+	player.notebooks_collected += 1
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_visibility_changed():
 	if question_ID == 1:
 		$question_texture.visible = true 
 	elif question_ID == 2:
@@ -66,28 +93,3 @@ func _ready():
 	$notebook_option.text = questionDictionary[question_ID]["answers"][1]
 	$notebook_option2.text = questionDictionary[question_ID]["answers"][2]
 	$notebook_option3.text = questionDictionary[question_ID]["answers"][3]
-
-func _on_notebook_option_pressed():
-	if questionDictionary[question_ID]["correctAnswerID"] != 1:
-		skaggs.speed += 2
-	visible = false
-	player.isDistracted = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	player.inNotebook = false
-
-
-func _on_notebook_option_2_pressed():
-	if questionDictionary[question_ID]["correctAnswerID"] != 2:
-		skaggs.speed += 2
-	visible = false
-	player.isDistracted = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	player.inNotebook = false
-
-func _on_notebook_option_3_pressed():
-	if questionDictionary[question_ID]["correctAnswerID"] != 3:
-		skaggs.speed += 2
-	visible = false
-	player.isDistracted = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	player.inNotebook = false

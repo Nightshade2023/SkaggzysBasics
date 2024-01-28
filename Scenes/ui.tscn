@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cg8aa0nuh4vm6" path="res://Assets/questions/question5.png" id="6_yv5v6"]
 
 [node name="ui_notebook_control" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,6 +83,7 @@ offset_right = 912.0
 offset_bottom = 258.0
 texture = ExtResource("6_yv5v6")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="notebook_option" to="." method="_on_notebook_option_pressed"]
 [connection signal="pressed" from="notebook_option2" to="." method="_on_notebook_option_2_pressed"]
 [connection signal="pressed" from="notebook_option3" to="." method="_on_notebook_option_3_pressed"]
