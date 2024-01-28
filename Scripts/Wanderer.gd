@@ -25,3 +25,9 @@ func _process(delta):
 	velocity = velocity.lerp(direction * speed, accel * delta)
 	
 	move_and_slide()
+
+
+func _on_area_3d_body_entered(body):
+	if body.is_in_group("player"):
+		body.isDistracted = true
+		body.TMenu = true

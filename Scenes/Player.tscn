@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr71lss0wqp0o"]
+[gd_scene load_steps=5 format=3 uid="uid://dr71lss0wqp0o"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_3cnft"]
+[ext_resource type="PackedScene" uid="uid://bxt41k05ap887" path="res://Scenes/TravisMenu.tscn" id="2_fuotl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mle6"]
 
@@ -29,6 +30,9 @@ offset_bottom = 27.0
 rounded = true
 
 [node name="Stamina Discharge" type="Timer" parent="."]
+
+[node name="TravisMenu" parent="." instance=ExtResource("2_fuotl")]
+visible = false
 
 [connection signal="timeout" from="Stamina Recharge" to="." method="_on_stamina_recharge_timeout"]
 [connection signal="timeout" from="Stamina Discharge" to="." method="_on_stamina_discharge_timeout"]
